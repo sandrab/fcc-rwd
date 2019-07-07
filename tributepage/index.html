@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Ruth van Klaveren Tribute</title>
+        <style>
+        /* @todo: add more styling. */
+        img {
+            max-width: 100%;
+            height: auto;
+            /* 
+                Note: The block display below is needed to pass User Story 8: "The img element should responsively resize, 
+                relative to the width of its parent element, without exceeding its original size.". 
+                It is not needed to let the responsiveness work, though. On the other hand, it is a nice default to have block display on images.
+            */
+            display: block;
+            margin: 0 auto;
+        }
+        </style>
+    </head>
+    <body>
+        <main id="main">
+            <article>
+                <header>
+                    <h1 id="title">Ruth van Klaveren Tribute</h1>
+                    <div id="img-div">
+                        <figure>
+                        <!-- @todo: Find a proper image somewhere on the net, Wikipedia perhaps and insert its URL and description below. -->
+                            <img id="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Cat_poster_1.jpg/512px-Cat_poster_1.jpg" alt="Ruth-a-likes" width="512" height="336" />
+                            <figcaption id="img-caption">
+                                Other beings, just like Ruth.<br />
+                                Copyright &copy;: Alvesgaspar [<a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>], via Wikimedia Commons.
+                            </figcaption>
+                        </figure>
+                    </div>
+                </header>
+                <section id="tribute-info">
+                    <article>
+                        <header>
+                            <h2>Introduction</h2>
+                        </header>
+                        <p>Ruth van Klaveren is a great being. Although not a human being, still a very <em>being</em> being.</p>
+                        <footer>
+                            <!-- Note: using an additional 'rel="noopener"' along with the 'target="_blank"' attribute, to prevent someone on the target site trying to exploit this vulnerability. -->
+                            <p>Read more about Ruth van Klaveren, or rather, <a id="tribute-link" href="https://en.wikipedia.org/wiki/Cat" target="_blank" rel="noopener">cats</a> in general, at our friends at Wikipedia.</p>
+                        </footer>
+                    </article>
+                </section>
+            </article>
+        </main>
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    </body>
+</html>
