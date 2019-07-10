@@ -1,31 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="nl">
     <head>
         <meta charset="utf-8" />
         <title>Ruth van Klaveren Tribute</title>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> 
         <style>
-        /* @todo: add more styling. */
+        /* === General variables === */
+        :root {
+            --max-page-width: 960px;
+        }
+/* @todo: make the content less wide on small screens (remove the grid-template-columns width?). */
+        /* === Layout === */
+        html {
+            height: 100%;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            min-height: 100%;
+            margin: 0;
+            line-height: 1.4;
+        }
+        @media (min-width: 960px){
+            body {
+                display: grid;
+                grid-template-columns: 1fr var(--max-page-width, 960px) 1fr;
+                grid-template-areas: ". content ." "footer footer footer";
+            }
+        }
+        #main {
+            grid-area: content;
+            background-color: rgb(240, 248, 255);
+            border: 1px solid rgb(220, 230, 235);
+            box-shadow: 8px 8px 10px 8px rgba(0, 0, 0, .3);
+            margin: 2rem 0;
+            padding: 0 2rem;
+        }
+        article > * {
+            background-color: #fff;
+            padding: 2rem 2rem 0 2rem;
+            margin: 2rem;
+            box-shadow: 5px 5px 9px 2px #095598;
+            border: 1px solid #fff; /* Needed to let the height of the box take the margin-bottom of the elements into account. */
+        }
+        #tribute-info h1, #tribute-info h2, #tribute-info p, #tribute-info ul, #tribute-info figure {
+	        margin: 0 0 2rem 0;
+        }
+        #img-div figure {
+            display: table; /* Used to let the figcaption be the same width as the image. */
+            margin-left: auto;
+            margin-right: auto;
+        }
         img {
             max-width: 100%;
             height: auto;
-            /* 
-                Note: The block display below is needed to pass User Story 8: "The img element should responsively resize, 
-                relative to the width of its parent element, without exceeding its original size.". 
-                It is not needed to let the responsiveness work, though. On the other hand, it is a nice default to have block display on images.
-            */
+/* Note: The block display below is needed to pass User Story 8: "The img element should responsively resize, relative to the width of its parent element, without exceeding its original size.". 
+It is not needed to let the responsiveness work, though. On the other hand, it is a nice default to have block display on images. */
             display: block;
             margin: 0 auto;
+        }
+        #img-caption {
+            font-size: small;
+            font-style: italic;
+            margin-top: .5em;
+        }
+        #footer {
+            grid-area: footer;
+            align-self: end;
+            background-color: #efefef;
+            padding: 1rem;
+            font-size: small;
+        }
+        #footer ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+        }
+
+        /* === Other details === */
+        /* The copyleft character. */
+        .reverse {
+            transform: rotate(180deg);
+            display: inline-block; /* This is needed for the rotate to work on line elements like span. */
+        }
+        /* The sunset. */
+        #main::before {
+            content: "";
+            position: absolute;
+            right: calc(20% - 5em);
+            top: -8em;
+            width: 15em;
+            height: 15em;
+            background: repeating-radial-gradient(7.8em, red, yellow);
+            border-radius: 50%;
+            z-index: -1;
+        }
+        /* Clipping one cat at the time. May not show up in all browsers, though, just for fun, really. */
+        #image {
+            animation-name: clip-the-cat;
+            animation-fill-mode: both;
+            animation-duration: 10s;
+        }
+        @keyframes clip-the-cat {
+            /* Read the clip-path inset values as: clipped from resp top, right, bottom, left. */
+            0% {clip-path: inset(0% 50% 50% 0%);}
+            10% {clip-path: inset(0% 50% 50% 0%);}
+            20% {clip-path: inset(0% 25% 50% 55%);}
+            25% {clip-path: inset(0% 25% 50% 55%);}
+            30% {clip-path: inset(0% 0% 50% 78%);}
+            40% {clip-path: inset(0% 0% 50% 78%);}
+            50% {clip-path: inset(50% 70% 0% 0%);}
+            60% {clip-path: inset(50% 70% 0% 0%);}
+            70% {clip-path: inset(50% 24% 0% 30%);}
+            75% {clip-path: inset(50% 24% 0% 30%);}
+            80% {clip-path: inset(50% 0% 0% 77%);}
+            90% {clip-path: inset(50% 0% 0% 77%);}
+            100%{clip-path: none;}
         }
         </style>
     </head>
     <body>
         <main id="main">
-            <article>
+            <article id="tribute-info">
                 <header>
                     <h1 id="title">Ruth van Klaveren Tribute</h1>
                     <div id="img-div">
                         <figure>
-                        <!-- @todo: Find a proper image somewhere on the net, Wikipedia perhaps and insert its URL and description below. -->
                             <img id="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Cat_poster_1.jpg/512px-Cat_poster_1.jpg" alt="Ruth-a-likes" width="512" height="336" />
                             <figcaption id="img-caption">
                                 Other beings, just like Ruth.<br />
@@ -34,20 +136,40 @@
                         </figure>
                     </div>
                 </header>
-                <section id="tribute-info">
-                    <article>
-                        <header>
-                            <h2>Introduction</h2>
-                        </header>
-                        <p>Ruth van Klaveren is a great being. Although not a human being, still a very <em>being</em> being.</p>
-                        <footer>
-                            <!-- Note: using an additional 'rel="noopener"' along with the 'target="_blank"' attribute, to prevent someone on the target site trying to exploit this vulnerability. -->
-                            <p>Read more about Ruth van Klaveren, or rather, <a id="tribute-link" href="https://en.wikipedia.org/wiki/Cat" target="_blank" rel="noopener">cats</a> in general, at our friends at Wikipedia.</p>
-                        </footer>
-                    </article>
+                <section>
+                    <header><h2>Who is Ruth van Klaveren?</h2></header>
+                    <p>Ruth van Klaveren is a great being. Although not a human being, still a very <em>being</em> being. She is friendly, amazing, soft-skinned and fluffy and she never swears.</p>
+                    <p>Through the years she met many people and an occasional other cat being. She is happy with life as it is, so it seems.</p>
                 </section>
-            </article>
+                <section>
+                    <header><h2>Curriculum Vitae</h2></header>
+                    <ul>
+                        <li>May 4th 2005: Ruth gets born.</li>
+                        <li>2005 - 2008: Early years.</li>
+                        <li>2009-2015: Adult life.</li>
+                        <li>October 15th 2015: Moving to a new home.</li>
+                    </ul>
+                </section>
+                <section>
+                    <header><h2>Hobbies and interests</h2></header>
+                    <p>Apart from sleeping and lying under the table for hours, Ruth really likes to run around the hallway like crazy sometimes. Other hobbies include yelling when dinner is not served on time.</p>
+                </section>
+                <footer>
+                        <!-- Note: using an additional 'rel="noopener"' along with the 'target="_blank"' attribute, to prevent someone on the target site trying to exploit this vulnerability. -->
+                        <p>Read more about Ruth van Klaveren, or rather, <a id="tribute-link" href="https://en.wikipedia.org/wiki/Cat" target="_blank" rel="noopener">cats</a> in general, at our friends at Wikipedia.</p>
+                </footer>
+           </article>
+           <aside>
+               <!-- @todo: add something nice here. -->
+           </aside>
         </main>
+        <footer id="footer">
+            <ul>
+                <li>Copyleft <span class="reverse">&copy;</span> 2019</li>
+                <li>No animals were harmed in the making of this page.</li>
+                <li>Background about the context of this page: <a href="https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-tribute-page" target="_blank" rel="noopener">freecodecamp</a>.</li>
+            </ul>
+        </footer>
         <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
     </body>
 </html>
