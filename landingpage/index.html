@@ -3,16 +3,44 @@
     <head>
         <meta charset="UTF-8">
         <title>DIY Cat Pet</title>
+        <style>
+        @media (min-width:960px) {
+            main {
+                display: flex;
+            }
+        }
+        </style>
     </head>
     <body>
         <header id="header">
-            <img id="header-img" src="images/cat-pet-logo.jpg" alt="DIY Cat Pet Logo" width="200" height="150">
+            <!-- Note: normaly we would use a relative link to the images subdir, but User Story #2 requires the src of the image to contain 'http'. -->
+            <img id="header-img" src="https://sandrab.github.io/fcc-rwd/landingpage/images/cat-pet-logo.jpg" alt="DIY Cat Pet Logo" width="200" height="150">
+            <nav id="nav-bar">
+                <a href="#intro" class="nav-link">Read</a>
+                <a href="#learn" class="nav-link">Learn</a>
+                <a href="#sign-up" class="nav-link">Sign up</a>
+            </nav>
         </header>
-
-        <!--
-            Video:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6wEXQlwqlMw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        -->
+        <main>
+            <header><h1>Do-it-yourself Cat Pet</h1></header>
+            <section id="intro">
+                <h2>Your cat misses a pet</h2>
+                <p>Does your cat miss having a pet of its own? Does it play with your plants instead?</p>
+                <p>DIY Cat Pet is the answer to your problem!</p>
+            </section>
+            <section id="learn">
+                <h2>Make your own cat pet</h2>
+                <p>Don't want to spend money on a commercial cat toy? Watch the video to learn how you can make your own.</p>
+                <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/6wEXQlwqlMw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </section>
+            <section id="sign-up">
+                <h2>Sign up for our newsletter</h2>
+                <form id="form" action="https://www.freecodecamp.com/email-submit" method="POST">
+                    <label>Email: <input id="email" type="email" name="email" placeholder="Your e-mailaddress"></label>
+                    <input type="submit" id="submit" value="Sign up">
+                </form>
+            </section>
+            </main>
         <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
     </body>
 </html>
