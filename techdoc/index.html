@@ -5,30 +5,70 @@
         <title>Technical documentation project X</title>
         <style>
             body {
-                max-width: 60em;
-                margin: auto;
+                margin: 0;
+            }
+            #main-doc, #navbar {
+                padding: .5em 2em;
+            }
+            #navbar ul {
+                padding: 0;
+                list-style: none;
+            }
+            .nav-link {
+                padding: .75em;
+                display: block;
+                text-decoration: none;
+                color: #cfcfcf;
+                background-color: #222;
+                border-bottom: 1px dotted #cfcfcf;
+            }
+            .nav-link:hover {
+                background-color: rgba(70, 150, 230, .8);
+                color: #222;
+            }
+            #navbar li:last-child .nav-link {
+                border: none;
+            }
+            #footer {
+                background-color: #efefef;
+                padding: 1rem;
+                font-size: small;
+            }
+            #footer ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
             }
             @media (min-width: 60em){
                 #navbar{
                     position: fixed;
                     left: 0;
-                    width: 25em;
+                    width: 20em;
                 }
                 #main-doc {
-                    margin-left: 25em;
+                    margin-left: 20em;
+                    max-width: 60em;
+                    padding: .5em 5em;
+                }
+                #footer ul {
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: space-around;
                 }
             }
-            @media (min-width: 85em){
-                #navbar{
-                    left: calc(50% - 0.5 * 85em);
-                }
+    
+            /* === Other details === */
+            /* The copyleft character. */
+            .reverse {
+                transform: rotate(180deg);
+                display: inline-block; /* This is needed for the rotate to work on line elements like span. */
             }
         </style>
         </head>
     <body>
         <nav id="navbar">
             <header>
-                <h1>Technical documentation project X</h1>
+                <h1>Technical documentation Project X</h1>
             </header>
             <ul>
                 <li><a class="nav-link" href="#background">Background</a></li>
@@ -74,14 +114,29 @@
                 <p>Build steps are like stepping stones. Seen one, seen them all.</p>
                 <p>Don't step on my toe, though, Joe. Thanks.</p>
                 <code>$ npm run build:project-x</code>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tubulum fuisse, qua illum, cuius is condemnatus est rogatione, P. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus; Quod quidem nobis non saepe contingit. Non igitur bene. Duo Reges: constructio interrete. Ut nemo dubitet, eorum omnia officia quo spectare, quid sequi, quid fugere debeant? Sed venio ad inconstantiae crimen, ne saepius dicas me aberrare; Etsi ea quidem, quae adhuc dixisti, quamvis ad aetatem recte isto modo dicerentur.
+                <br>Sint ista Graecorum; Quasi vero, inquit, perpetua oratio rhetorum solum, non etiam philosophorum sit. Summae mihi videtur inscitiae. Cum ageremus, inquit, vitae beatum et eundem supremum diem, scribebamus haec. Traditur, inquit, ab Epicuro ratio neglegendi doloris. Sed potestne rerum maior esse dissensio? Ergo id est convenienter naturae vivere, a natura discedere. Octavio fuit, cum illam severitatem in eo filio adhibuit, quem in adoptionem D.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tubulum fuisse, qua illum, cuius is condemnatus est rogatione, P. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus; Quod quidem nobis non saepe contingit. Non igitur bene. Duo Reges: constructio interrete. Ut nemo dubitet, eorum omnia officia quo spectare, quid sequi, quid fugere debeant? Sed venio ad inconstantiae crimen, ne saepius dicas me aberrare; Etsi ea quidem, quae adhuc dixisti, quamvis ad aetatem recte isto modo dicerentur.
+                <br>Ampulla enim sit necne sit, quis non iure optimo irrideatur, si laboret? Sed erat aequius Triarium aliquid de dissensione nostra iudicare. Simus igitur contenti his. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant. Si autem id non concedatur, non continuo vita beata tollitur.</p>
             </section>
             <section id="maintenance" class="main-section">
                 <header><h2>Maintenance</h2></header>
                 <p>Project X needs a lot of maintenance. People need to keep watching it, or it will disappear into the void.</p>
-                <p>Although some would argue that woul actually be a good thing. Since they never liked Project X in the first place. Let alone this technical documentation page.</p>
+                <p>Although some would argue that would actually be a good thing. Since they never liked Project X in the first place. Let alone this technical documentation page.</p>
                 <code>$ sleep</code>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tubulum fuisse, qua illum, cuius is condemnatus est rogatione, P. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus; Quod quidem nobis non saepe contingit. Non igitur bene. Duo Reges: constructio interrete. Ut nemo dubitet, eorum omnia officia quo spectare, quid sequi, quid fugere debeant? Sed venio ad inconstantiae crimen, ne saepius dicas me aberrare; Etsi ea quidem, quae adhuc dixisti, quamvis ad aetatem recte isto modo dicerentur.
+                <br>Sint ista Graecorum; Quasi vero, inquit, perpetua oratio rhetorum solum, non etiam philosophorum sit. Summae mihi videtur inscitiae. Cum ageremus, inquit, vitae beatum et eundem supremum diem, scribebamus haec. Traditur, inquit, ab Epicuro ratio neglegendi doloris. Sed potestne rerum maior esse dissensio? Ergo id est convenienter naturae vivere, a natura discedere. Octavio fuit, cum illam severitatem in eo filio adhibuit, quem in adoptionem D.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tubulum fuisse, qua illum, cuius is condemnatus est rogatione, P. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus; Quod quidem nobis non saepe contingit. Non igitur bene. Duo Reges: constructio interrete. Ut nemo dubitet, eorum omnia officia quo spectare, quid sequi, quid fugere debeant? Sed venio ad inconstantiae crimen, ne saepius dicas me aberrare; Etsi ea quidem, quae adhuc dixisti, quamvis ad aetatem recte isto modo dicerentur.
+                <br>Ampulla enim sit necne sit, quis non iure optimo irrideatur, si laboret? Sed erat aequius Triarium aliquid de dissensione nostra iudicare. Simus igitur contenti his. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant. Si autem id non concedatur, non continuo vita beata tollitur.</p>
             </section>
         </main>
+        <footer id="footer">
+            <ul>
+                <li>Copyleft <span class="reverse">&copy;</span> 2019</li>
+                <li>No animals were harmed in the making of this page.</li>
+                <li>Background about the context of this page: <a href="https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-technical-documentation-page" target="_blank" rel="noopener">freecodecamp</a>.</li>
+            </ul>
+        </footer>
         <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
     </body>
 </html>
