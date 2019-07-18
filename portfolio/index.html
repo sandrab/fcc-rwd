@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>My FCC Personal Portfolio</title>
+        <style>
+        #welcome-section {
+            min-height: 100vh;
+        }
+        #navbar {
+            position: fixed;
+            top: 0;
+        }
+        @media (min-width: 960px) {
+            main {
+                max-width: 960px;
+                margin: auto;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="#tribute">Tribute-page</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <header id="welcome-section">
+                <h1>My FCC Personal Portfolio</h1>
+            </header>
+            <section id="projects">
+                <div id="tribute" class="project-tile">
+                    <h2>Tribute-page</h2>
+                    <a href="https://sandrab.github.io/fcc-rwd/tributepage/" target="_blank" rel="noopener">Ruth van Klaveren Tribute</a>
+                </div>
+            </section>
+            <footer>
+                Portfolio by <a id="profile-link" href="https://www.freecodecamp.org/sandrab" target="_blank" rel="noopener">sandrab</a> on FreeCodeCamp.
+            </footer>
+        </main>
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    </body>
+</html>
